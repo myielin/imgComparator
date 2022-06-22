@@ -95,13 +95,15 @@ double read(char *in1, char *in2){
 }
 
 void csvCreator(){
-  //wtf works
+  printf("imagens,diferença (%%)\n");
   for(int i = 1; i <= 9; i++){
     char *ci = i+'0';
     for (int j = 9; j >= 1; j--){
       char *cj = j+'0';
-      printf("%d -> %d,%f", i, j, read(&ci, &cj));
-      printf("\n");
+
+      if(i > j) continue;  // avoid repetition of data
+
+      printf("%d -> %d,%f\n", i, j, read(&ci, &cj)); // copy-paste the output into a csv file
     }
   }
 }
