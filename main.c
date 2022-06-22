@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "dataGenerator.h"
 
+
 void main();
 
 void again(){
@@ -107,7 +108,9 @@ void csvCreator(){
 }
 
 void main(int argc, char *argv[]){
-  // csvCreator(); // uncomment to make a csv-like copypaste text thing (or ignore (recommended))
+
+ //  csvCreator(); // uncomment to make a csv-like copypaste text thing (or ignore (recommended))
+
 
 // here we check if the filenames are entered as arguments before the execution of the program, and if not, we ask for them.
   if (argc < 2){
