@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "dataGenerator.h"
 
 void main();
 
@@ -22,7 +23,7 @@ double compare(unsigned char * fst, unsigned char * scd, long int p){
     }
   }
 
-  printf("\nSpotted differences: %d\n", (int) c);
+  printf("\nSpotted differences: %d\n", (int) c); // comment this line for csv stuff
   return c / p;
 }
 
@@ -93,8 +94,20 @@ double read(char *in1, char *in2){
 
 }
 
+void csvCreator(){
+  //wtf works
+  for(int i = 1; i <= 9; i++){
+    char *ci = i+'0';
+    for (int j = 9; j >= 1; j--){
+      char *cj = j+'0';
+      printf("%d -> %d,%f", i, j, read(&ci, &cj));
+      printf("\n");
+    }
+  }
+}
 
 void main(int argc, char *argv[]){
+  // csvCreator(); // uncomment to make a csv-like copypaste text thing (or ignore (recommended))
 
 // here we check if the filenames are entered as arguments before the execution of the program, and if not, we ask for them.
   if (argc < 2){
